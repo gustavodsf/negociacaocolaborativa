@@ -1,20 +1,20 @@
 import { SeoType } from "types";
 
 export const seoData: SeoType = {
-  title: "Multi-user, full-stack blogging application",
+  title: "Negociação Colaborativa - UFRJ",
   subTitle:
-    "Multi-user, full-stack blogging app built with Next.js and Supabase",
-  absoluteTitle: "Next.js | Blog app",
-  ogTitle: "Next.js | Supabase | Blog app",
+    "Negociação Colaborativa - UFRJ",
+  absoluteTitle: "Negociação Colaborativa - UFRJ",
+  ogTitle: "Negociação Colaborativa - UFRJ",
   author: {
-    name: "Tim",
-    twitterUrl: "https://twitter.com/timtbdev",
-    twitterAddress: "@timtbdev",
+    name: "Negociação Colaborativa - UFRJ",
+    twitterUrl: "https://twitter.com/",
+    twitterAddress: "@",
   },
   description:
-    "Multi-user, Fullstack, Blogging, applicaiton, blog, app, Next.js, Supabase, Supabase Database, Supabase Auth, Supabase Storage, TailwindCSS, TypeScript, Shadcn-ui, Radix-ui, HeadlessUi, NodeMailer, ConvertKit, Vercel OG, React-Hook-Form, React-Drop-Zone, Zod, HeroIcons, Lucide, Novel, Vaul, Uppy",
+    "Negociação Colaborativa - UFRJ é um projeto de extensão da Universidade Federal do Rio de Janeiro que visa promover a cultura de paz e a resolução de conflitos por meio da negociação colaborativa.",
   keywords: [
-    "Multi-user, Fullstack, Blogging, applicaiton, blog, app, Next.js, Supabase, Supabase Database, Supabase Auth, Supabase Storage, TailwindCSS, TypeScript, Shadcn-ui, Radix-ui, HeadlessUi, NodeMailer, ConvertKit, Vercel OG, React-Hook-Form, React-Drop-Zone, Zod, HeroIcons, Lucide, Novel, Vaul, Uppy",
+    "Negociação, Colaborativa, UFRJ",
   ],
-  tags: ["Next.js", "Supabase", "TailwindCSS"],
+  tags: ["Negociação", "Colaborativa", "UFRJ",],
 };

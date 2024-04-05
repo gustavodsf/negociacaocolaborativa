@@ -1,5 +1,4 @@
 import {
-  MainBanner,
   MainFooter,
   MainGrid,
   MainHeader,
@@ -9,7 +8,6 @@ import { ReactNode } from "react";
 export default function MainLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <MainBanner />
       <MainHeader />
       <MainGrid>
         <div className="min-h-full py-10">
