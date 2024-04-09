@@ -2,7 +2,7 @@ import { DashBoardType } from "@/types";
 import { UserCircle } from "lucide-react";
 
 const dashBoardProfile: DashBoardType = {
-  title: "Profile",
+  title: "Perfil",
   slug: "/settings",
   icon: UserCircle,
 };

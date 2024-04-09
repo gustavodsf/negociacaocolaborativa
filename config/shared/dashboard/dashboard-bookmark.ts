@@ -2,7 +2,7 @@ import { DashBoardType } from "@/types";
 import { BookMarkedIcon, FileTextIcon as PostIcon } from "lucide-react";
 
 const dashBoardBookMark: DashBoardType = {
-  title: "Bookmarks",
+  title: "Favoritos",
   slug: "/bookmarks",
   icon: BookMarkedIcon,
 };

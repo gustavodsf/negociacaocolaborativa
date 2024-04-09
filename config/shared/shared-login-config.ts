@@ -1,20 +1,20 @@
 const sharedLoginConfig = {
   // Login form
-  title: "Login",
-  description: "Please sign in to continue.",
-  or: "or",
-  close: "Close",
+  title: "Entrar",
+  description: "Faça login para continuar",
+  or: "ou",
+  close: "Fechar",
   // Social login form
-  google: "Sign in with Google",
-  facebook: "Sign in with Facebook",
-  github: "Sign in with Github",
+  google: "Entrar com Google",
+  facebook: "Entrar com Facebook",
+  github: "Entrar com GitHub",
 
   // Email login form
-  email: "Sign in with magic link",
-  sendButton: "Send magic link",
-  emailRequiredError: "Email is required.",
-  emailSent: "Email sent.",
-  error: "Error occured.",
+  email: "Faça login com link mágico",
+  sendButton: "Enviar link mágico",
+  emailRequiredError: "Email é obrigatório",
+  emailSent: "Email enviado",
+  error: "Ocorreu um erro",
 };
 
 export default sharedLoginConfig;

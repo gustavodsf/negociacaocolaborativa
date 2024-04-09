@@ -27,30 +27,30 @@ export const postEditFormSchema = z.object({
   title: z
     .string()
     .min(2, {
-      message: "Title must be at least 2 characters.",
+      message: "O título deve ter pelo menos 2 caracteres.",
     })
     .max(120, {
-      message: "Title must not be longer than 120 characters.",
+      message: "O título não deve ter mais de 120 caracteres.",
     }),
   slug: z
     .string()
     .min(2, {
-      message: "Slug must be at least 2 characters.",
+      message: "Slug deve ter pelo menos 2 caracteres.",
     })
     .max(100, {
-      message: "Slug must not be longer than 100 characters.",
+      message: "Slug não deve ter mais de 100 caracteres.",
     }),
   categoryId: z.string({
-    required_error: "Please select a category.",
+    required_error: "Por favor, selecione uma categoria.",
   }),
   image: z.string().optional(),
   description: z
     .string()
     .min(2, {
-      message: "Description must be at least 2 characters.",
+      message: "A descrição deve ter pelo menos 2 caracteres.",
     })
     .max(300, {
-      message: "Description must not be longer than 300 characters.",
+      message: "A descrição não deve ter mais de 300 caracteres.",
     }),
   content: z.any().optional(),
 });

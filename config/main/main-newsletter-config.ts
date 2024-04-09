@@ -1,13 +1,13 @@
 const mainNewsLetterConfig = {
-  title: "Subscribe to our newsletter",
+  title: "Assine a nossa newsletter",
   description:
-    "The latest news, articles, and resources, sent to your inbox weekly.",
-  email: "Email address",
-  subscribe: "Subscribe",
-  warning: "You need to confirm your email address.",
-  success: "Thank you for subscribing.",
-  error: "Something went wrong.",
-  emailRequiredError: "Please provide your email address.",
+    "As últimas notícias, artigos e recursos enviados semanalmente para sua caixa de entrada.",
+  email: "Endereço de email",
+  subscribe: "Se inscrever",
+  warning: "Você precisa confirmar seu endereço de e-mail.",
+  success: "Obrigado por se inscrever.",
+  error: "Algo deu errado.",
+  emailRequiredError: "por favor forneça seu endereço de e-mail.",
 };
 
 export default mainNewsLetterConfig;

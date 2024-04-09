@@ -14,6 +14,6 @@ export const commentDeleteSchema = z.object({
 export const commentFormSchema = z.object({
     comment: z
         .string()
-        .min(3, { message: 'Comment must be at least 3 characters long.' })
-        .max(500, { message: 'Comment must be at most 500 characters long.' }),
+        .min(3, { message: 'O comentário deve ter pelo menos 3 caracteres.' })
+        .max(500, { message: 'O comentário deve ter no máximo 500 caracteres.' }),
 });

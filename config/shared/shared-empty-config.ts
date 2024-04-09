@@ -1,9 +1,9 @@
 const sharedEmptyConfig = {
-  title: "Empty",
-  description: "No posts to display",
-  error: "Something went wrong",
-  tryAgain: "Try again",
-  sorry: "Sorry",
+  title: "Vazio",
+  description: "Nada para mostrar aqui",
+  error: "Ops! Algo deu errado",
+  tryAgain: "Tente novamente",
+  sorry: "Desculpe!",
 };
 
 export default sharedEmptyConfig;

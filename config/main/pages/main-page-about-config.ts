@@ -8,44 +8,44 @@ import {
 
 const mainPageAboutConfig: AboutPageType = {
   general: {
-    title: "About",
-    subTitle: "Fullstack Blogging application",
+    title: "Sobre",
+    subTitle: "Negociação Colaborativa",
     description:
-      "This is a fullstack blogging application built with Next.js 13 and Supabase.",
+      "Negociação Colaborativa",
     paragraphs: [
       {
         description:
-          "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.",
+          "Negociação Colaborativa 1",
       },
       {
         description:
-          "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.",
+          "Negociação Colaborativa 2",
       },
     ],
   },
   features: [
     {
-      name: "Frontend",
+      name: "T1",
       description:
-        "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.",
+        "Negociação Colaborativa",
       icon: ComputerDesktopIcon,
     },
     {
-      name: "Trust",
+      name: "T2",
       description:
-        "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.",
+        "Negociação Colaborativa",
       icon: LockClosedIcon,
     },
     {
-      name: "Compassion",
+      name: "T3",
       description:
-        "Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.",
+        "Negociação Colaborativa",
       icon: SparklesIcon,
     },
     {
-      name: "Leadership",
+      name: "T4",
       description:
-        "Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.",
+        "Negociação Colaborativa",
       icon: UsersIcon,
     },
   ],

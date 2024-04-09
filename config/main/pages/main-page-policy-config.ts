@@ -1,24 +1,24 @@
 import { PolicyPageType } from "@/types";
 
 const mainPagePolicyConfig: PolicyPageType = {
-  title: "Privacy Policy",
+  title: "Política de Privacidade",
   description:
-    "This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from ub.cafe (the “Site”).",
+    "Esta Política de Privacidade descreve como suas informações pessoais são coletadas, usadas e compartilhadas quando você visita.",
   paragraphs: [
     {
-      title: "Personal Information we collect",
+      title: "Informações pessoais que coletamos",
       description:
-        "When you create an account on the site, we collect your name and email address. We use your name and email address for identification and authentication. You will also receive authentication emails at the email address provided. We DO NOT share any personal information to third parties.",
+        "Quando você cria uma conta no site, coletamos seu nome e endereço de e-mail. Usamos seu nome e endereço de e-mail para identificação e autenticação. Você também receberá e-mails de autenticação no endereço de e-mail fornecido. NÃO compartilhamos nenhuma informação pessoal com terceiros.",
     },
     {
-      title: "Changes",
+      title: "Mudanças",
       description:
-        "We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal or regulatory reasons.",
+        "Poderemos atualizar esta política de privacidade de tempos em tempos para refletir, por exemplo, alterações em nossas práticas ou por outros motivos operacionais, legais ou regulatórios.",
     },
     {
-      title: "Contact Us",
+      title: "Contate-nos",
       description:
-        "For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e-mail at support@domain.com.",
+        "Para obter mais informações sobre nossas práticas de privacidade, se você tiver dúvidas ou quiser fazer uma reclamação, entre em contato conosco pelo e-mail negociacaocolaborativaufrj@gmail.com",
     },
   ],
 };

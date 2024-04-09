@@ -1,6 +1,6 @@
 const sharedPagingConfig = {
-  previous: "Previous",
-  next: "Next",
+  previous: "Anterior",
+  next: "Seguinte",
 };
 
 export default sharedPagingConfig;

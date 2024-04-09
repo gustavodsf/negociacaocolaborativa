@@ -69,10 +69,10 @@ const MainContactPage = () => {
     <>
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Contact us
+          Contate-nos
         </h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
-          Get in touch with us anytime, through email.
+          Entre em contato conosco a qualquer momento, por e-mail.
         </p>
       </div>
       <Form {...form}>

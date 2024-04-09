@@ -1,7 +1,7 @@
 const sharedNotFoundConfig = {
-  title: "Page not found",
-  description: "The page you are looking for does not exist.",
-  back: "Back",
+  title: "Página não encontrada",
+  description: "A página que você está procurando não existe",
+  back: "Voltar",
   menu: "Menu",
 };
 

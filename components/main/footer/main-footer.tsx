@@ -18,7 +18,7 @@ const MainFooter = () => {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
-                  Categories
+                  Categorias
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {mainFooterConfig.categories.map((category) => (
@@ -39,7 +39,7 @@ const MainFooter = () => {
               </div>
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
-                  Pages
+                  Páginas
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {mainFooterConfig.pages.map((page) => (
@@ -58,7 +58,7 @@ const MainFooter = () => {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
-                  Socials
+                  Redes Sociais
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {mainFooterConfig.socials.map((social) => (
@@ -76,7 +76,7 @@ const MainFooter = () => {
               </div>
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
-                  Legal
+                  Jurídico
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {mainFooterConfig.legals.map((legal) => (

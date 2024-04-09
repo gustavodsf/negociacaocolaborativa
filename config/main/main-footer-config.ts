@@ -16,19 +16,11 @@ const mainFooterConfig: FooterType = {
       slug: "/",
     },
     {
-      title: "About",
+      title: "Sobre",
       slug: "/about",
     },
     {
-      title: "Docs",
-      slug: "/docs",
-    },
-    {
-      title: "Changelogs",
-      slug: "/changelogs",
-    },
-    {
-      title: "Contact",
+      title: "Contato",
       slug: "/contact",
     },
   ],
@@ -62,11 +54,11 @@ const mainFooterConfig: FooterType = {
   ],
   legals: [
     {
-      title: "Terms",
+      title: "Termo",
       slug: "/terms",
     },
     {
-      title: "Policy",
+      title: "Política",
       slug: "/policy",
     },
   ],

@@ -1,5 +1,5 @@
 const detailShareConfig = {
-  title: "Share",
+  title: "Compartilhar",
 };
 
 export default detailShareConfig;
