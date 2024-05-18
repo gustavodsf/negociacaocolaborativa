@@ -1,0 +1,11 @@
+.bi.bi-diagram{
+  background-color: #051d40;
+  border: none;
+  box-shadow: none;
+}
+
+.bi.bi-diagram .bi.bi-diagram-node.bi-diagram-node-default{
+  border: .07rem solid #1c361a;
+  background-color: #99ba99;
+  color: #1c361a;
+}
