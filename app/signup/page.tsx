@@ -1,13 +1,13 @@
-import { login } from "../../actions/login";
+import { signup } from "../../actions/login";
 import Link from "next/link";
 import SendGAEvent from "@/components/SendGAEvent";
 
 export default function SignUpPage() {
   return (
-    <main className="flex min-h-[100vh] min-w-[100vw] flex-row items-center justify-center bg-colabBlue">
+    <main className="flex min-h-[100vh] min-w-[100vw] flex-row items-center justify-center bg-colabLightGreen">
       <div className="flex h-[50vh] w-[50vw] flex-col  items-center justify-around">
         <section className="text-center font-theGreat text-5xl font-bold">
-          Entrar
+          Crie sua conta
         </section>
         <main className="flex items-center justify-center text-sm text-gray-500">
           <form className="group flex w-[30rem] flex-col rounded-md bg-white p-5 shadow-lg md:p-10">
@@ -45,32 +45,18 @@ export default function SignUpPage() {
               type="submit"
               className="mt-5 rounded-md bg-blue-500 py-3 text-white group-invalid:pointer-events-none group-invalid:opacity-50"
             >
-              Entrar
+              Criar
             </button>
             <span className="mt-2 flex flex-row items-center justify-around">
               <Link
                 className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                href="/signup"
+                href="/signin"
               >
                 <SendGAEvent
                   action="clicked_to_create_account"
                   category="click"
                   label="User clicked to create account"
                   value="O usuário clicou para criar a conta"
-                >
-                  Criar uma conta
-                </SendGAEvent>
-              </Link>
-
-              <Link
-                className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                href="/theme"
-              >
-                <SendGAEvent
-                  action="clicked_to_theme"
-                  category="click"
-                  label="User clicked to go back to the theme screen"
-                  value="O usuário clicou para voltar para a tela de tema"
                 >
                   Voltar
                 </SendGAEvent>

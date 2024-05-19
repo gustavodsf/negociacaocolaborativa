@@ -1,8 +1,8 @@
 //HotJar
-'use client'
+"use client";
 
-import Script from 'next/script'
-import * as gtag from '../gtag';
+import Script from "next/script";
+import * as gtag from "../gtag";
 
 const HotJar = () => {
   return (
@@ -22,7 +22,7 @@ const HotJar = () => {
         `,
       }}
     />
-  )
-}
+  );
+};
 
-export default HotJar
+export default HotJar;

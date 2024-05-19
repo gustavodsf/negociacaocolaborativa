@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
 import { ReactNode } from "react";
-import * as gtag from '../gtag';
+import * as gtag from "../gtag";
 
 type Props = {
-  children:  ReactNode,
-  action: string,
-  category: string,
-  label: string, 
-  value: string
-}
+  children: ReactNode;
+  action: string;
+  category: string;
+  label: string;
+  value: string;
+};
 
 const ga_event = ({ action, category, label, value }: any) => {
   console.log("SEND DATA TO GA");
@@ -17,18 +17,24 @@ const ga_event = ({ action, category, label, value }: any) => {
     action,
     category,
     label,
-    value
+    value,
   });
 };
 
 export default function SendGAEvent(props: Props) {
-  const { action, category, label, value,  children} = props;
-  return <span onClick={() => ga_event({
-    action,
-    category,
-    label,
-    value
-  })}>
-    {children}
-  </span>;
+  const { action, category, label, value, children } = props;
+  return (
+    <span
+      onClick={() =>
+        ga_event({
+          action,
+          category,
+          label,
+          value,
+        })
+      }
+    >
+      {children}
+    </span>
+  );
 }

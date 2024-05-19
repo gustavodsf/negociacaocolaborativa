@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
 import Script from "next/script";
 
 const GoogleAnalytics = () => {
-    return (
-        <>
-            <Script
-                strategy="afterInteractive"
-                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ID}`}
-            />
-            <Script
-                id="gtag-init"
-                strategy="afterInteractive"
-                dangerouslySetInnerHTML={{
-                    __html: `
+  return (
+    <>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ID}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
                       window.dataLayer = window.dataLayer || [];
                       function gtag(){dataLayer.push(arguments);}
                       gtag('js', new Date());
@@ -21,10 +21,10 @@ const GoogleAnalytics = () => {
                       page_path: window.location.pathname,
                       });
                     `,
-                }}
-            />
-        </>
-    );
+        }}
+      />
+    </>
+  );
 };
 
 export default GoogleAnalytics;
