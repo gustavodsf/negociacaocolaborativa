@@ -45,8 +45,15 @@ export default async function Grupo() {
                       href="./perspectiva"
                       className="rounded border-b-4 border-colabDarkGreen bg-colabLightGreen px-4 py-2 font-bold text-white hover:border-colabBlue hover:bg-colabGray hover:text-colabBlue flex flex-row items-center justify-around"
                     >
-                      <span className="material-symbols-outlined">content_copy</span>
-                      Perspectivas
+                      <SendGAEvent
+                        action="go_from_group_to_perspective"
+                        category="click"
+                        label="User wants to get knowledge before voting"
+                        value="Usuário clicou para obter conhecimento antes de votar"
+                      >
+                        <span className="material-symbols-outlined">content_copy</span>
+                        Perspectivas
+                      </SendGAEvent>
                     </Link>
                   </div>
                   <div>
@@ -54,8 +61,15 @@ export default async function Grupo() {
                       href="./vote"
                       className="rounded border-b-4 border-colabDarkGreen bg-colabLightGreen px-4 py-2 font-bold text-white hover:border-colabBlue hover:bg-colabGray hover:text-colabBlue flex flex-row items-center justify-around"
                     >
-                      <span className="material-symbols-outlined">how_to_vote</span>
-                      Votar
+                      <SendGAEvent
+                        action="go_from_group_to_vote"
+                        category="click"
+                        label="User wants to vote and not pass on the content screen"
+                        value="Usuário clicou para votar sem passar na tela de perspectiva"
+                      >
+                        <span className="material-symbols-outlined">how_to_vote</span>
+                        Votar
+                      </SendGAEvent>
                     </Link>
                   </div>
                 </div>
