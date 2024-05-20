@@ -9,7 +9,7 @@ export default async function Index() {
         <div className="h-full w-[60%]">
           <div className="flex h-full flex-col items-center">
             <span className="text-center font-dancing text-colabGreen sm:text-[13rem] lg:text-8xl">
-              Dilema de Sócrates
+              Dilemas de Sócrates
             </span>
             <span className="mt-6">
               <Image src="/lamp.png" width={150} height={150} alt="lamp" />

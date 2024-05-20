@@ -3,29 +3,16 @@
 import Diagram, { createSchema, useSchema } from "beautiful-react-diagrams";
 import Image from "next/image";
 import Link from "next/link";
+import { toast } from "react-hot-toast";
+import { diagram } from "./constants";
 import "beautiful-react-diagrams/styles.css";
 import "./style.css";
-
-const initialSchema = createSchema({
-  nodes: [
-    { id: "node-1", content: "Perspectivas", coordinates: [600, 10] },
-    { id: "node-2", content: "Identidade da criança", coordinates: [200, 70] },
-    { id: "node-3", content: "Maturidade da criança", coordinates: [400, 70] },
-    { id: "node-4", content: "Apoiar a escolha", coordinates: [600, 70] },
-    { id: "node-5", content: "Conteúdo Informativo", coordinates: [800, 70] },
-    { id: "node-6", content: "Conteúdos Extremados", coordinates: [1000, 70] },
-  ],
-  links: [
-    { input: "node-1", output: "node-2" },
-    { input: "node-1", output: "node-3" },
-    { input: "node-1", output: "node-4" },
-    { input: "node-1", output: "node-5" },
-    { input: "node-1", output: "node-6" },
-  ],
-});
+import { DiagramSchema } from "beautiful-react-diagrams/@types/DiagramSchema";
 
 const UncontrolledDiagram = () => {
-  // create diagrams schema
+  const initialSchema = createSchema(
+    diagram as Partial<DiagramSchema<unknown>>,
+  );
   const [schema, { onChange }] = useSchema(initialSchema);
 
   return (

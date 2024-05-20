@@ -17,7 +17,7 @@ export default async function Login() {
             <section>
               <Link
                 className="text-4xl text-colabPurple"
-                href="https://docs.google.com/forms/d/1wPn8nuakpDDYqv61ruRcZJBORPKkr4VP4vG4R5ptmBk/prefill"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSebcdg_KJ_xTPnPnE5HUuLV-mPdoWmrBGosmik7nvcaFqkdAw/viewform"
               >
                 <SendGAEvent
                   action="go_to_fill_the_quiz"

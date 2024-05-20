@@ -11,7 +11,7 @@ export default async function Perspectiva() {
           <Image src="/group_img.png" width={500} height={500} alt="lamp" />
           <section className="align-center flex w-full flex-col justify-center">
             <Link
-              href="https://docs.google.com/forms/d/1TI5z_jW1ueA0RHKUMH71K956TR-hi3xeSdTOIFa2Kaw/prefill"
+              href="hhttps://docs.google.com/forms/d/e/1FAIpQLSct7LJFujHT8vbDPmcREudtciY7oi2O-jvpgapE0kGp_V4LJQ/viewform"
               className="flex w-full flex-col items-center justify-center"
             >
               <SendGAEvent

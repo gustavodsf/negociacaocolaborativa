@@ -1,6 +1,6 @@
-import { login } from "../../actions/login";
-import Link from "next/link";
 import SendGAEvent from "@/components/SendGAEvent";
+import Link from "next/link";
+import { login } from "../../actions/login";
 
 export default function SignUpPage() {
   return (
@@ -49,7 +49,7 @@ export default function SignUpPage() {
             </button>
             <span className="mt-2 flex flex-row items-center justify-around">
               <Link
-                className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                className="font-medium text-blue-600 hover:underline dark:text-blue-500"
                 href="/signup"
               >
                 <SendGAEvent
@@ -63,7 +63,7 @@ export default function SignUpPage() {
               </Link>
 
               <Link
-                className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                className="font-medium text-blue-600 hover:underline dark:text-blue-500"
                 href="/theme"
               >
                 <SendGAEvent
