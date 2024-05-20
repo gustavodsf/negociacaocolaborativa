@@ -1,3 +1,4 @@
+import { Chatbot } from "@/components/ChatBot";
 import SendGAEvent from "@/components/SendGAEvent";
 import Image from "next/image";
 import Link from "next/link";
@@ -50,6 +51,7 @@ export default async function Index() {
           </div>
         </div>
       </div>
+      <Chatbot/>
     </div>
   );
 }
