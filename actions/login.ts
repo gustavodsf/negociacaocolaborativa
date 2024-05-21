@@ -41,7 +41,6 @@ export async function signup(formData: FormData) {
     redirect("/error");
   }
 
-  toast.success("Confime seu endereço de email");
   revalidatePath("/", "layout");
   redirect("/theme");
 }

@@ -44,6 +44,7 @@ export default function SignUpPage() {
             <button
               type="submit"
               className="mt-5 rounded-md bg-blue-500 py-3 text-white group-invalid:pointer-events-none group-invalid:opacity-50"
+              formAction={signup}
             >
               Criar
             </button>

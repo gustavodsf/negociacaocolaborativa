@@ -6,7 +6,7 @@ export default function SignUpPage() {
   return (
     <main className="flex min-h-[100vh] min-w-[100vw] flex-row items-center justify-center bg-colabBlue">
       <div className="flex h-[50vh] w-[50vw] flex-col  items-center justify-around">
-        <section className="text-center font-theGreat text-5xl font-bold">
+        <section className="text-center font-theGreat text-5xl font-bold text-white">
           Entrar
         </section>
         <main className="flex items-center justify-center text-sm text-gray-500">
@@ -44,6 +44,7 @@ export default function SignUpPage() {
             <button
               type="submit"
               className="mt-5 rounded-md bg-blue-500 py-3 text-white group-invalid:pointer-events-none group-invalid:opacity-50"
+              formAction={login}
             >
               Entrar
             </button>
