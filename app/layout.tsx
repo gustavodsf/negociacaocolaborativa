@@ -8,6 +8,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { Providers } from "@/providers";
 import { ChatContainer } from "@/components/ChatContainer";
 import { AIModal } from "@/components/AIModal";
+import SignOut from "@/components/SignOut";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -40,6 +41,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html
       lang="en"
@@ -55,6 +57,7 @@ export default function RootLayout({
             </Providers>
             <HotJar />
             <Toaster position="bottom-center" />
+            <SignOut />
           </NextUIProvider>
         </main>
       </body>
