@@ -72,10 +72,10 @@ export default async function Login() {
           </main>
           <footer className="flex w-full flex-row items-center justify-around p-2">
             <div className="w-[50%]"></div>
-            <div className="flex  w-[40%] flex-col items-center justify-center">
+            <div className="flex  w-[40%] flex-row items-center justify-center gap-1">
               <Link
                 href="/grupo"
-                className="flex w-[10rem] items-center justify-center 
+                className="flex w-[8rem] items-center justify-center 
               rounded border-2 border-colabBlue bg-colabBlue 
               bg-transparent px-4 py-2 font-semibold text-colabBlue
               shadow-2xl hover:border-transparent
@@ -87,10 +87,34 @@ export default async function Login() {
                   label="User is going from login to group page "
                   value="Usuário clicou para realizar a transição entre a página de login para a de grupos"
                 >
-                  <span className="material-symbols-outlined mr-1">
-                    subdirectory_arrow_right
+                  <span className="w-full h-full flex flex-row items-center">
+                    <span className="material-symbols-outlined mr-1">
+                      subdirectory_arrow_right
+                    </span>
+                    <span className="text-xl">Enter</span>
                   </span>
-                  <span className="text-xl">Enter</span>
+                </SendGAEvent>
+              </Link>
+              <Link
+                href="/"
+                className="flex w-[8rem] items-center justify-center 
+              rounded border-2 border-colabBlue bg-colabBlue 
+              bg-transparent px-4 py-2 font-semibold text-colabBlue
+              shadow-2xl hover:border-transparent
+              hover:bg-colabGreen hover:text-colabBlue"
+              >
+                <SendGAEvent
+                  action="go_from_theme_to_group"
+                  category="click"
+                  label="User is going from login to group page "
+                  value="Usuário clicou para realizar a transição entre a página de login para a de grupos"
+                >
+                  <span className="w-full h-full flex flex-row items-center">
+                    <span className="material-symbols-outlined mr-1">
+                      subdirectory_arrow_left
+                    </span>
+                    <span className="text-xl">Voltar</span>
+                  </span>
                 </SendGAEvent>
               </Link>
             </div>

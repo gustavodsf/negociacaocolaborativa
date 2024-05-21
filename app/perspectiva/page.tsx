@@ -9,6 +9,7 @@ import "beautiful-react-diagrams/styles.css";
 import "./style.css";
 import { DiagramSchema } from "beautiful-react-diagrams/@types/DiagramSchema";
 import SignOut from "@/components/SignOut";
+import SendGAEvent from "@/components/SendGAEvent";
 
 const UncontrolledDiagram = () => {
   const initialSchema = createSchema(
@@ -32,21 +33,54 @@ export default async function Perspectiva() {
           <header>
             <Image src="/perspective.png" width={250} height={300} alt="lamp" />
           </header>
-          <main className="text-white">
+          <main>
             <UncontrolledDiagram />
-            <Link
-              href="/vote"
-              className="flex w-[10rem] items-center justify-center 
-              rounded border-2 border-colabGreen bg-colabBlue 
-              bg-transparent px-4 py-2 font-semibold text-colabGreen
-              shadow-2xl hover:border-transparent
-              hover:bg-colabGreen hover:text-colabBlue"
-            >
-              <span className="material-symbols-outlined mr-1">
-                subdirectory_arrow_right
-              </span>
-              <span className="text-xl">Enter</span>
-            </Link>
+            <div className="w-full flex flex-row  justify-between">
+              <Link
+                href="/vote"
+                className="flex w-[10rem] items-center justify-center 
+                rounded border-2 border-colabGreen bg-colabBlue 
+                bg-transparent px-4 py-2 font-semibold text-colabGreen
+                shadow-2xl hover:border-transparent
+                hover:bg-colabGreen hover:text-colabBlue"
+              >
+                <SendGAEvent
+                  action="go_from_perspectiva_to_vote"
+                  category="click"
+                  label="User is going from perspectiva  to vote"
+                  value="Usuário clicou para ir votar"
+                >
+                  <span className="w-full h-full flex flex-row items-center">
+                    <span className="material-symbols-outlined mr-1">
+                      subdirectory_arrow_right
+                    </span>
+                    <span className="text-xl">Enter</span>
+                  </span>
+                </SendGAEvent>
+              </Link>
+              <Link
+                href="/grupo"
+                className="flex w-[10rem] items-center justify-center 
+                rounded border-2 border-colabGreen bg-colabBlue 
+                bg-transparent px-4 py-2 font-semibold text-colabGreen
+                shadow-2xl hover:border-transparent
+                hover:bg-colabGreen hover:text-colabBlue"
+              >
+                <SendGAEvent
+                  action="go_from_perspectiva_to_grupo"
+                  category="click"
+                  label="User is going from perspectiva  to group"
+                  value="Usuário quer ir da página da página de perspectiva para grupo"
+                >
+                  <span className="w-full h-full flex flex-row items-center">
+                    <span className="material-symbols-outlined mr-1">
+                      subdirectory_arrow_left
+                    </span>
+                    <span className="text-xl">Voltar</span>
+                  </span>
+                </SendGAEvent>
+              </Link>
+            </div>
           </main>
         </div>
       </div>

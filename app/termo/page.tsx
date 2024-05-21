@@ -79,7 +79,7 @@ export default async function Termo() {
           </main>
           <footer className="flex flex-col items-end justify-end p-1">
             <Link
-              href="/login"
+              href="/theme"
               className="flex w-[10rem] items-center justify-center 
               rounded border-2 border-colabBlue bg-colabBlue 
               bg-transparent px-4 py-2 font-semibold text-colabBlue
@@ -92,10 +92,12 @@ export default async function Termo() {
                 label="User is going from termo  to login"
                 value="Usuário quer ir da página do termo de consentimento para login"
               >
-                <span className="material-symbols-outlined mr-1">
-                  subdirectory_arrow_right
+                <span className="w-full h-full flex flex-row items-center">
+                  <span className="material-symbols-outlined mr-1">
+                    subdirectory_arrow_left
+                  </span>
+                  <span className="font-theGreat text-xl">Voltar</span>
                 </span>
-                <span className="font-theGreat text-xl">Voltar</span>
               </SendGAEvent>
             </Link>
           </footer>

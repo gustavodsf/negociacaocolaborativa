@@ -44,10 +44,12 @@ export default async function Index() {
                   label="User is going from home to theme"
                   value="Usuário clicou no link para ir da home para para login"
                 >
-                  <span className="material-symbols-outlined mr-1">
-                    subdirectory_arrow_right
+                  <span className="w-full h-full flex flex-row items-center">
+                    <span className="material-symbols-outlined mr-1">
+                      subdirectory_arrow_right
+                    </span>
+                    <span className="text-xl">Enter</span>
                   </span>
-                  <span className="text-xl">Enter</span>
                 </SendGAEvent>
               </Link>
             </div>

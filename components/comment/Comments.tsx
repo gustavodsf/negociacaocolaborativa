@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { toast } from 'react-hot-toast'
 import { createClient } from "@supabase/supabase-js";
 import { ChangeEvent, FormEvent, useState, useEffect } from "react";
@@ -134,8 +133,8 @@ export default function Comments({ theme } : { theme: string}) {
   return (
     <>
       <div className="justify-center p-1 w-full">
-          <h1 className="text-2xl font-semibold font-theGreat ">Comentário</h1>
-          <form onSubmit={onSubmit} className="mt-2 flex gap-1">
+          <h1 className="text-2xl font-semibold font-theGreat ">Comentários</h1>
+          { email && <form onSubmit={onSubmit} className="mt-2 flex gap-1">
             <div className="w-full">
               {replyOf && (
                 <div className="flex gap-4 my-2 items-center justify-start">
@@ -161,7 +160,8 @@ export default function Comments({ theme } : { theme: string}) {
             <button type="submit" className="px-4 py-2 bg-colabBlue rounded-lg text-white">
               Postar
             </button>
-          </form>
+          </form> 
+          }
           <div className="flex flex-col gap-2 pt-2">
             {(commentList ?? [])
               .sort((a, b) => {

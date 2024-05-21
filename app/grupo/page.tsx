@@ -54,10 +54,12 @@ export default async function Grupo() {
                           label="User wants to get knowledge before voting"
                           value="Usuário clicou para obter conhecimento antes de votar"
                         >
-                          <span className="material-symbols-outlined">
-                            content_copy
+                          <span className="w-full h-full flex flex-row items-center">
+                            <span className="material-symbols-outlined">
+                              content_copy
+                            </span>
+                            Perspectivas
                           </span>
-                          Perspectivas
                         </SendGAEvent>
                       </Link>
                     </div>
@@ -72,10 +74,12 @@ export default async function Grupo() {
                           label="User wants to vote and not pass on the content screen"
                           value="Usuário clicou para votar sem passar na tela de perspectiva"
                         >
-                          <span className="material-symbols-outlined">
-                            how_to_vote
+                          <span className="w-full h-full flex flex-row items-center">
+                            <span className="material-symbols-outlined">
+                              how_to_vote
+                            </span>
+                            Votar
                           </span>
-                          Votar
                         </SendGAEvent>
                       </Link>
                     </div>
@@ -111,7 +115,30 @@ export default async function Grupo() {
                 </div>
               </div>
             </div>
-            <div className="h-full w-[30%] bg-star"></div>
+            <div className="h-full w-[30%] bg-star flex flex-col items-center justify-end">
+            <Link
+                href="/theme"
+                className="flex w-[8rem] items-center justify-center 
+              rounded border-2 border-colabBlue bg-colabBlue 
+              bg-transparent px-4 py-2 font-semibold text-colabBlue
+              shadow-2xl hover:border-transparent
+              hover:bg-colabGreen hover:text-colabBlue"
+              >
+                <SendGAEvent
+                  action="go_from_group_to_theme"
+                  category="click"
+                  label="User is going from group to login page "
+                  value="Usuário clicou para realizar a transição entre a página de grupos para a de login"
+                >
+                  <span className="w-full h-full flex flex-row items-center">
+                    <span className="material-symbols-outlined mr-1">
+                      subdirectory_arrow_left
+                    </span>
+                    <span className="text-xl">Voltar</span>
+                  </span>
+                </SendGAEvent>
+              </Link>
+            </div>
           </main>
         </div>
       </div>
