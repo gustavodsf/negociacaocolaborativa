@@ -1,6 +1,6 @@
 "use client";
 
-import { ChatContainer } from "@/components/ChatContainer";
+import { ChatContainer } from "@/components/chatbot/ChatContainer";
 import {
   Button,
   Modal,

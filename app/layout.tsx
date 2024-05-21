@@ -2,7 +2,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { Dancing_Script, Fredericka_the_Great, Roboto } from "next/font/google";
 import "./globals.css";
 import "./globalicon.css";
-import { AIModal } from "@/components/AIModal";
+import { AIModal } from "@/components/chatbot/AIModal";
 import HotJar from "@/components/Hotjar";
 import { Providers } from "@/providers";
 import { NextUIProvider } from "@nextui-org/react";
