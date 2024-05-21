@@ -4,6 +4,10 @@ import "./globals.css";
 import "./globalicon.css";
 import HotJar from "@/components/Hotjar";
 import { Toaster } from "react-hot-toast";
+import { NextUIProvider } from "@nextui-org/react";
+import { Providers } from "@/providers";
+import { ChatContainer } from "@/components/ChatContainer";
+import { AIModal } from "@/components/AIModal";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -44,9 +48,14 @@ export default function RootLayout({
       <GoogleAnalytics />
       <body className="bg-background text-foreground">
         <main className="flex min-h-screen flex-col items-center">
-          {children}
-          <HotJar />
-          <Toaster position="bottom-center" />
+          <NextUIProvider>
+            <Providers>
+              {children}
+              <AIModal/>
+            </Providers>
+            <HotJar />
+            <Toaster position="bottom-center" />
+          </NextUIProvider>
         </main>
       </body>
     </html>
