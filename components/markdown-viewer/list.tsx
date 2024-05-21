@@ -3,7 +3,7 @@ export const UlComponent: React.FC<React.HTMLAttributes<HTMLUListElement>> = ({
   ...props
 }) => {
   return (
-    <ul {...props} className="list-disc pl-4 mb-4">
+    <ul {...props} className="mb-4 list-disc pl-4">
       {children}
     </ul>
   );
@@ -14,7 +14,7 @@ export const OlComponent: React.FC<React.HTMLAttributes<HTMLOListElement>> = ({
   ...props
 }) => {
   return (
-    <ol {...props} className="list-decimal pl-4 mb-0">
+    <ol {...props} className="mb-0 list-decimal pl-4">
       {children}
     </ol>
   );
@@ -25,7 +25,7 @@ export const LiComponent: React.FC<React.LiHTMLAttributes<HTMLLIElement>> = ({
   ...props
 }) => {
   return (
-    <li {...props} className="mb-1 leading-snug pl-4">
+    <li {...props} className="mb-1 pl-4 leading-snug">
       {children}
     </li>
   );

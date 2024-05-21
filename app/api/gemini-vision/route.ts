@@ -1,24 +1,19 @@
 // api/gemini-vision/route.ts
-import { GoogleGenerativeAIStream, StreamingTextResponse } from "ai";
-
 import {
-  GoogleGenerativeAI,
+  defaultSafetySettings,
+  mapSafetySettings,
+} from "@/lib/safety-settings-mapper";
+import { sanitizeContent } from "@/lib/sanitize-content";
+import { visionRequestSchema } from "@/lib/validate/vision-request-schema";
+import { GeneralSettings } from "@/types";
+import {
   GenerateContentRequest,
-  Part,
+  GoogleGenerativeAI,
   InlineDataPart,
+  Part,
   TextPart,
 } from "@google/generative-ai";
-
-import {
-  mapSafetySettings,
-  defaultSafetySettings,
-} from "@/lib/safety-settings-mapper";
-
-import { GeneralSettings } from "@/types";
-
-import { visionRequestSchema } from "@/lib/validate/vision-request-schema";
-
-import { sanitizeContent } from "@/lib/sanitize-content";
+import { GoogleGenerativeAIStream, StreamingTextResponse } from "ai";
 
 export const runtime = "edge";
 
@@ -52,7 +47,7 @@ export async function POST(req: Request) {
         mimeType: media_types[index],
         data: mediaData,
       },
-    })
+    }),
   );
 
   const userMessagePart: TextPart = { text: userMessage };

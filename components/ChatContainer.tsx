@@ -1,16 +1,15 @@
 "use client";
+
 // components/ChatContainer.tsx
-import React, { useRef, useEffect, useCallback } from "react";
+import { useControlContext } from "@/providers/ControlContext";
 import { Message, useChat } from "ai/react";
 import { MessageCircleX } from "lucide-react";
-
-import { Card } from "./ui/card";
-import { Button } from "./ui/button";
-
-import { useControlContext } from "@/providers/ControlContext";
+import React, { useCallback, useEffect, useRef } from "react";
 import { CommonForm } from "./CommonForm";
-import { TypingBubble } from "./TypingBubble";
 import { MessageItem } from "./MessageItem";
+import { TypingBubble } from "./TypingBubble";
+import { Button } from "./ui/button";
+import { Card } from "./ui/card";
 
 export const ChatContainer = () => {
   const { generalSettings, safetySettings } = useControlContext();
@@ -47,16 +46,16 @@ export const ChatContainer = () => {
   const handleRemoveMessage = useCallback(
     (id: string) => {
       const newMessages = messagesRef.current.filter(
-        (message) => message.id !== id
+        (message) => message.id !== id,
       );
       setMessages(newMessages);
     },
-    [setMessages]
+    [setMessages],
   );
 
   return (
-    <div className="flex flex-col h-full">
-      <Card className="flex flex-col flex-1 overflow-hidden">
+    <div className="flex h-full flex-col">
+      <Card className="flex flex-1 flex-col overflow-hidden">
         {messages.length > 0 && (
           <div className={`flex p-4`}>
             <Button

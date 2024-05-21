@@ -1,10 +1,12 @@
 import SendGAEvent from "@/components/SendGAEvent";
+import SignOut from "@/components/SignOut";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Index() {
   return (
     <>
+      <SignOut />
       <div className="flex min-h-[100vh] min-w-[100vw] items-center justify-center bg-colabBlue">
         <div className="m-auto flex h-[70%] w-[60%] flex-row">
           <div className="h-full w-[60%]">

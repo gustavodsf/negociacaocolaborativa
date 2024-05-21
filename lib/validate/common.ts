@@ -1,6 +1,6 @@
 // lib/validate/common.ts
-import { z } from "zod";
 import { JSONValue } from "ai";
+import { z } from "zod";
 
 export const safetySettingSchema = z.object({
   harassment: z.number(),
@@ -17,7 +17,7 @@ const jsonValueSchema: z.ZodSchema<JSONValue> = z.lazy(() =>
     z.boolean(),
     z.array(jsonValueSchema),
     z.record(jsonValueSchema),
-  ])
+  ]),
 );
 
 const functionCallSchema = z.object({

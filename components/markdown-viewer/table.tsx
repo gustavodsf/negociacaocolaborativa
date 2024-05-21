@@ -3,10 +3,10 @@ export const TableComponent: React.FC<
   React.TableHTMLAttributes<HTMLTableElement>
 > = ({ children, ...props }) => {
   return (
-    <div className="w-full max-w-[340px] sm:max-w-[640px] md:max-w-full overflow-x-auto">
+    <div className="w-full max-w-[340px] overflow-x-auto sm:max-w-[640px] md:max-w-full">
       <table
         {...props}
-        className="w-full my-4 divide-y divide-primary/60 border border-primary/30 border-collapse p-1 bg-primary/10"
+        className="my-4 w-full border-collapse divide-y divide-primary/60 border border-primary/30 bg-primary/10 p-1"
       >
         {children}
       </table>
@@ -28,7 +28,7 @@ export const TbodyComponent: React.FC<
   React.HTMLAttributes<HTMLTableSectionElement>
 > = ({ children, ...props }) => {
   return (
-    <tbody {...props} className="divide-y divide-x">
+    <tbody {...props} className="divide-x divide-y">
       {children}
     </tbody>
   );
@@ -46,7 +46,7 @@ export const ThComponent: React.FC<
   return (
     <th
       {...props}
-      className={`px-6 py-3 text-left text-sm font-bold text-primary/90 uppercase border-x border-x-primary/10`}
+      className={`border-x border-x-primary/10 px-6 py-3 text-left text-sm font-bold uppercase text-primary/90`}
     >
       {children}
     </th>
@@ -59,7 +59,7 @@ export const TdComponent: React.FC<
   return (
     <td
       {...props}
-      className="px-6 py-2 text-sm whitespace-nowrap border-x-primary/10 border-y-primary/50 border"
+      className="whitespace-nowrap border border-x-primary/10 border-y-primary/50 px-6 py-2 text-sm"
     >
       {children}
     </td>

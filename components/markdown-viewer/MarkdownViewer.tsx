@@ -1,20 +1,20 @@
 "use client";
+
 // components/MarkdownViewer.tsx
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
-
-import { UlComponent, OlComponent, LiComponent } from "./list";
-import { PreComponent, CodeBlock } from "./code";
+import remarkGfm from "remark-gfm";
+import { CodeBlock, PreComponent } from "./code";
+import { LiComponent, OlComponent, UlComponent } from "./list";
 import {
   TableComponent,
-  TheadComponent,
   TbodyComponent,
-  TrComponent,
-  ThComponent,
   TdComponent,
+  ThComponent,
+  TheadComponent,
+  TrComponent,
 } from "./table";
 
 type AnchorProps = {
@@ -70,5 +70,5 @@ export const MarkdownViewer: React.FC<IMarkdownViewerProps> = React.memo(
       </ReactMarkdown>
     );
   },
-  (prevProps, nextProps) => prevProps.text === nextProps.text
+  (prevProps, nextProps) => prevProps.text === nextProps.text,
 );

@@ -1,15 +1,16 @@
 "use client";
+
 // components/CommonForm.tsx
+import { Loader, Send } from "lucide-react";
 import React, {
-  useState,
-  useRef,
-  useCallback,
   FormEvent,
   KeyboardEvent,
+  useCallback,
   useEffect,
+  useRef,
+  useState,
 } from "react";
 import { Button } from "./ui/button";
-import { Loader, Send } from "lucide-react";
 
 interface CommonFormProps {
   value: string;
@@ -64,7 +65,7 @@ export const CommonForm: React.FC<CommonFormProps> = ({
         adjustTextareaHeight(textarea);
       }
     },
-    [onInputChange, onFormSubmit, isSubmittable]
+    [onInputChange, onFormSubmit, isSubmittable],
   );
 
   const handleTextAreaInput = useCallback(
@@ -72,7 +73,7 @@ export const CommonForm: React.FC<CommonFormProps> = ({
       onInputChange(event);
       adjustTextareaHeight(event.currentTarget);
     },
-    [onInputChange]
+    [onInputChange],
   );
 
   const resetTextareaHeight = useCallback(() => {
@@ -91,7 +92,7 @@ export const CommonForm: React.FC<CommonFormProps> = ({
   return (
     <form
       onSubmit={onFormSubmit}
-      className="flex gap-4 pt-4 border-t border-primary/70 p-2"
+      className="flex gap-4 border-t border-primary/70 p-2 pt-4"
     >
       <textarea
         ref={textareaRef}
@@ -101,7 +102,7 @@ export const CommonForm: React.FC<CommonFormProps> = ({
         onKeyDown={handleKeyPress}
         style={{ height: textareaHeight }}
         rows={1}
-        className="flex-1 p-2 resize-none min-h-8 rounded max-h-[50vh]"
+        className="max-h-[50vh] min-h-8 flex-1 resize-none rounded p-2"
         placeholder={placeholder}
       />
       <div className="mt-auto">

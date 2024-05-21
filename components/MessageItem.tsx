@@ -1,6 +1,6 @@
-import React, { memo } from "react";
 import { Message } from "ai/react";
 import { Bot, RefreshCw, Trash, User } from "lucide-react";
+import React, { memo } from "react";
 import { MarkdownViewer } from "./markdown-viewer/MarkdownViewer";
 import { Button } from "./ui/button";
 
@@ -27,7 +27,7 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
         <div
           className={`${
             isUser ? "" : "bg-primary/10 dark:bg-primary/10"
-          } px-4 py-4 w-full`}
+          } w-full px-4 py-4`}
         >
           <div className="my-4 flex justify-between">
             <div className="flex space-x-4 font-medium">
@@ -42,7 +42,7 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
                   size="sm"
                   onClick={onRefresh}
                 >
-                  <RefreshCw className="w-4 h-4" />
+                  <RefreshCw className="h-4 w-4" />
                 </Button>
               )}
               {!isLoading && isLastMessage && (
@@ -52,7 +52,7 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
                   size="sm"
                   onClick={onRemove}
                 >
-                  <Trash className="w-4 h-4" />
+                  <Trash className="h-4 w-4" />
                 </Button>
               )}
             </div>
@@ -61,5 +61,5 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
         </div>
       </div>
     );
-  }
+  },
 );

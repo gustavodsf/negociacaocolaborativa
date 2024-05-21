@@ -2,13 +2,11 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { Dancing_Script, Fredericka_the_Great, Roboto } from "next/font/google";
 import "./globals.css";
 import "./globalicon.css";
-import HotJar from "@/components/Hotjar";
-import { Toaster } from "react-hot-toast";
-import { NextUIProvider } from "@nextui-org/react";
-import { Providers } from "@/providers";
-import { ChatContainer } from "@/components/ChatContainer";
 import { AIModal } from "@/components/AIModal";
-import SignOut from "@/components/SignOut";
+import HotJar from "@/components/Hotjar";
+import { Providers } from "@/providers";
+import { NextUIProvider } from "@nextui-org/react";
+import { Toaster } from "react-hot-toast";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -41,7 +39,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html
       lang="en"
@@ -53,11 +50,10 @@ export default function RootLayout({
           <NextUIProvider>
             <Providers>
               {children}
-              <AIModal/>
+              <AIModal />
             </Providers>
             <HotJar />
             <Toaster position="bottom-center" />
-            <SignOut />
           </NextUIProvider>
         </main>
       </body>

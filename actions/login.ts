@@ -3,7 +3,6 @@
 import { createClient } from "@/utils/supabase/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { toast } from "react-hot-toast";
 
 export async function login(formData: FormData) {
   const supabase = createClient();
@@ -43,4 +42,20 @@ export async function signup(formData: FormData) {
 
   revalidatePath("/", "layout");
   redirect("/theme");
+}
+
+export async function logout() {
+  const supabase = createClient();
+  await supabase.auth.signOut();
+  redirect("/theme");
+}
+
+export async function getUserEmail() {
+  const supabase = createClient();
+  await supabase.auth.getSession();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  const { email } = user ?? { email: "" };
+  return email;
 }

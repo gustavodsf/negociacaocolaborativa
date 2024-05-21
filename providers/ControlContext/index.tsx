@@ -1,8 +1,8 @@
 "use client";
-// providers/ControlContext.tsx
-import { createContext, useState, useContext, ReactNode, useMemo } from "react";
 
-import { MediaData, SafetySettings, GeneralSettings } from "@/types";
+// providers/ControlContext.tsx
+import { GeneralSettings, MediaData, SafetySettings } from "@/types";
+import { createContext, ReactNode, useContext, useMemo, useState } from "react";
 
 interface ControlContextState {
   selectedModel: "gemini-pro" | "gemini-pro-vision";
@@ -12,7 +12,7 @@ interface ControlContextState {
   generalSettings: GeneralSettings;
   handleGeneralSettingsChange: (
     setting: keyof GeneralSettings,
-    newValue: number
+    newValue: number,
   ) => void;
   safetySettings: SafetySettings;
   handleModelChange: (model: "gemini-pro" | "gemini-pro-vision") => void;
@@ -20,7 +20,7 @@ interface ControlContextState {
 }
 
 export const ControlContext = createContext<ControlContextState | undefined>(
-  undefined
+  undefined,
 );
 
 export const ControlProvider = ({ children }: { children: ReactNode }) => {
@@ -50,7 +50,7 @@ export const ControlProvider = ({ children }: { children: ReactNode }) => {
 
   const handleGeneralSettingsChange = (
     setting: keyof GeneralSettings,
-    newValue: number
+    newValue: number,
   ) => {
     setGeneralSettings((prevState) => ({
       ...prevState,
@@ -60,7 +60,7 @@ export const ControlProvider = ({ children }: { children: ReactNode }) => {
 
   const handleSafetyChange = (
     type: keyof SafetySettings,
-    newValue: number[]
+    newValue: number[],
   ) => {
     setSafetySettings((prevState) => ({
       ...prevState,
@@ -96,7 +96,7 @@ export const ControlProvider = ({ children }: { children: ReactNode }) => {
       handleModelChange,
       handleSafetyChange,
     }),
-    [selectedModel, mediaDataList, generalSettings, safetySettings]
+    [selectedModel, mediaDataList, generalSettings, safetySettings],
   );
 
   return (

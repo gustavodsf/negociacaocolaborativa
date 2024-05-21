@@ -1,22 +1,17 @@
 // api/gemini/route.ts
-import { GoogleGenerativeAIStream, Message, StreamingTextResponse } from "ai";
-
 import {
-  GoogleGenerativeAI,
-  GenerateContentRequest,
-  Content,
-} from "@google/generative-ai";
-
-import {
-  mapSafetySettings,
   defaultSafetySettings,
+  mapSafetySettings,
 } from "@/lib/safety-settings-mapper";
-
 import { sanitizeContent } from "@/lib/sanitize-content";
-
 import { proRequestSchema } from "@/lib/validate/pro-request-schema";
-
 import { GeneralSettings } from "@/types";
+import {
+  Content,
+  GenerateContentRequest,
+  GoogleGenerativeAI,
+} from "@google/generative-ai";
+import { GoogleGenerativeAIStream, Message, StreamingTextResponse } from "ai";
 
 export const runtime = "edge";
 

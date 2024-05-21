@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -26,14 +27,14 @@ export const PreComponent: React.FC<IPreProps> = ({ children }) => {
   }, [children?.props?.children]);
 
   return (
-    <pre className="bg-[#2B2B2B] rounded-md p-2 text-neutral-50 mb-4">
+    <pre className="mb-4 rounded-md bg-[#2B2B2B] p-2 text-neutral-50">
       <div className={`flex justify-between`}>
-        <div className="italic text-xs text-neutral-300 uppercase">
+        <div className="text-xs uppercase italic text-neutral-300">
           {language}
         </div>
         <button
           type={`button`}
-          className="border w-20 rounded"
+          className="w-20 rounded border"
           onClick={copyToClipboard}
         >
           {hasCopied ? "Copied!" : "Copy"}
