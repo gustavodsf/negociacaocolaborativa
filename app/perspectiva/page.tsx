@@ -18,7 +18,7 @@ const UncontrolledDiagram = () => {
   const [schema, { onChange }] = useSchema(initialSchema);
 
   return (
-    <div style={{ height: "24rem", width: "80rem" }}>
+    <div style={{ height: "100rem", width: "20rem" }}>
       <Diagram schema={schema} onChange={onChange} />
     </div>
   );
@@ -28,17 +28,15 @@ export default async function Perspectiva() {
   return (
     <>
       <SignOut />
-      <div className="flex h-[100vh] w-[100vw] items-center justify-center bg-colabBlue">
-        <div className="m-auto flex h-[70%] w-[60%] flex-col items-center justify-center">
+      <div className="flex flex-col min-h-screen w-screen items-center justify-center bg-colabBlue gap-1 text-white">
           <header>
-            <Image src="/perspective.png" width={250} height={300} alt="lamp" />
+            <Image src="/perspective.png" width={200} height={80} alt="lamp" />
           </header>
-          <main>
-            <UncontrolledDiagram />
-            <div className="flex w-full flex-row  justify-between">
+          <UncontrolledDiagram />
+          <div className="flex w-full flex-row  justify-end gap-2">
               <Link
                 href="/vote"
-                className="flex w-[10rem] items-center justify-center 
+                className="flex w-[8rem] items-center justify-center 
                 rounded border-2 border-colabGreen bg-colabBlue 
                 bg-transparent px-4 py-2 font-semibold text-colabGreen
                 shadow-2xl hover:border-transparent
@@ -60,7 +58,7 @@ export default async function Perspectiva() {
               </Link>
               <Link
                 href="/grupo"
-                className="flex w-[10rem] items-center justify-center 
+                className="flex w-[8rem] items-center justify-center 
                 rounded border-2 border-colabGreen bg-colabBlue 
                 bg-transparent px-4 py-2 font-semibold text-colabGreen
                 shadow-2xl hover:border-transparent
@@ -81,9 +79,7 @@ export default async function Perspectiva() {
                 </SendGAEvent>
               </Link>
             </div>
-          </main>
-        </div>
-      </div>
+      </div>    
     </>
   );
 }
