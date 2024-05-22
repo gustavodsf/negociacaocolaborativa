@@ -141,7 +141,7 @@ export default function Comments({ theme }: { theme: string }) {
   return (
     <>
       <div className="w-full justify-center p-1">
-        <h1 className="font-theGreat text-2xl font-semibold ">Comentários</h1>
+        <h1 className="font-theGreat text-xl font-semibold ">Comentários</h1>
         {email && (
           <form onSubmit={onSubmit} className="mt-2 flex gap-1">
             <div className="w-full">
