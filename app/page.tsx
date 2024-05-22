@@ -5,11 +5,11 @@ import Link from "next/link";
 
 export default async function Index() {
   return (
-    <div className="flex h-screen w-screen flex-col items-center bg-colabBlue justify-center">
+    <div className="flex h-screen w-screen flex-col items-center justify-center bg-colabBlue">
       <span className="text-center font-dancing text-8xl text-colabGreen">
         Dilemas de Sócrates
       </span>
-      <div className="flex flex-row w-full items-center justify-center">
+      <div className="flex w-full flex-row items-center justify-center">
         <Image src="/lamp.png" width={200} height={200} alt="lamp" />
         <div className="flex h-full flex-col items-center justify-end bg-star">
           <Image

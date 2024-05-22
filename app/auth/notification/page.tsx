@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function NotificationPage() {
   return (
-    <div className="flex h-screen w-screen flex-col items-center justify-center bg-colabPurple text-white gap-3">
+    <div className="flex h-screen w-screen flex-col items-center justify-center gap-3 bg-colabPurple text-white">
       <Mail size={48} />
-      <span className="font-theGreat text-5xl text-center">
+      <span className="text-center font-theGreat text-5xl">
         Verifique seu email para ativar sua conta!
       </span>
       <Link
@@ -16,5 +16,5 @@ export default function NotificationPage() {
         Voltar
       </Link>
     </div>
-  )
+  );
 }

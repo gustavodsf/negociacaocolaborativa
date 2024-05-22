@@ -7,8 +7,7 @@ export default async function Termo() {
   return (
     <>
       <SignOut />
-      <div className="flex h-[100vh] w-[100vw] items-center justify-center bg-colabGray text-black">
-        <div className="m-auto flex h-[70%] w-[60%] flex-col text-justify">
+      <div className="flex flex-col min-h-screen w-screen items-center justify-center bg-colabGray text-black">
           <header className="width-full flex flex-row items-center justify-center align-middle">
             <Image
               className="mr-5"
@@ -21,7 +20,7 @@ export default async function Termo() {
               TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO
             </span>
           </header>
-          <main className="p-1">
+          <main className="p-4 text-justify">
             <p>
               Convidamos o/a Sr(a) Participar do experimento sobre “Análise de
               Comportamentos Durante a Interação Virtual”, parte integrante da
@@ -102,7 +101,6 @@ export default async function Termo() {
             </Link>
           </footer>
         </div>
-      </div>
     </>
   );
 }

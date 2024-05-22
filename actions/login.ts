@@ -40,8 +40,8 @@ export async function signup(formData: FormData) {
     redirect("/error");
   }
 
-  revalidatePath('/', 'layout')
-  redirect('/auth/notification')
+  revalidatePath("/", "layout");
+  redirect("/auth/notification");
 }
 
 export async function logout() {
