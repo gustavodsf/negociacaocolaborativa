@@ -92,7 +92,7 @@ export default async function Termo() {
                 label="User is going from termo  to login"
                 value="Usuário quer ir da página do termo de consentimento para login"
               >
-                <span className="w-full h-full flex flex-row items-center">
+                <span className="flex h-full w-full flex-row items-center">
                   <span className="material-symbols-outlined mr-1">
                     subdirectory_arrow_left
                   </span>

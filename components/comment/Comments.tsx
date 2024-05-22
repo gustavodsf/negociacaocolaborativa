@@ -1,10 +1,9 @@
-import { toast } from 'react-hot-toast'
-import { createClient } from "@supabase/supabase-js";
-import { ChangeEvent, FormEvent, useState, useEffect } from "react";
-
-import useSWR, { mutate } from "swr";
-import { CircleCheck, CircleX, Pencil, Reply, Trash, X } from "lucide-react";
 import { getUserEmail } from "@/actions/login";
+import { createClient } from "@supabase/supabase-js";
+import { CircleCheck, CircleX, Pencil, Reply, Trash, X } from "lucide-react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
+import useSWR, { mutate } from "swr";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL + "";
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY + "";
@@ -24,7 +23,8 @@ interface EditCommentParams {
   payload: string;
 }
 
-const fetcher = (url: string) => fetch(url, { method: "GET" }).then((res) => res.json());
+const fetcher = (url: string) =>
+  fetch(url, { method: "GET" }).then((res) => res.json());
 
 const addCommentRequest = (url: string, data: any) =>
   fetch(url, {
@@ -40,12 +40,16 @@ const editCommentRequest = (url: string, data: any) =>
     body: JSON.stringify(data),
   }).then((res) => res.json());
 
-const deleteCommentRequest = (url: string, id: string, theme:string) =>
-  fetch(`${url}&comment_id=${id}`, { method: "DELETE" }).then((res) => res.json());
+const deleteCommentRequest = (url: string, id: string, theme: string) =>
+  fetch(`${url}&comment_id=${id}`, { method: "DELETE" }).then((res) =>
+    res.json(),
+  );
 
-export default function Comments({ theme } : { theme: string}) {
-  const GET_COMMENT_URL = `/api/comments?theme=${theme}`
-  const { data: commentList, error: commentListError } = useSWR<CommentParams[]>(GET_COMMENT_URL, fetcher);
+export default function Comments({ theme }: { theme: string }) {
+  const GET_COMMENT_URL = `/api/comments?theme=${theme}`;
+  const { data: commentList, error: commentListError } = useSWR<
+    CommentParams[]
+  >(GET_COMMENT_URL, fetcher);
   const [comment, setComment] = useState<string>("");
   const [editComment, setEditComment] = useState<EditCommentParams>({
     id: "",
@@ -78,7 +82,7 @@ export default function Comments({ theme } : { theme: string}) {
             return { ...comment, payload: editData.payload };
           }
         }),
-        false
+        false,
       );
       const response = await editCommentRequest(GET_COMMENT_URL, editData);
       if (response[0].created_at) {
@@ -95,9 +99,13 @@ export default function Comments({ theme } : { theme: string}) {
       mutate(
         `api/comments?theme=${theme}`,
         commentList.filter((comment) => comment.id !== id),
-        false
+        false,
       );
-      const { message } = await deleteCommentRequest(GET_COMMENT_URL, id, theme);
+      const { message } = await deleteCommentRequest(
+        GET_COMMENT_URL,
+        id,
+        theme,
+      );
       if (message) {
         mutate(GET_COMMENT_URL);
         toast.success("Comentário removido com sucesso!!");
@@ -107,12 +115,12 @@ export default function Comments({ theme } : { theme: string}) {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const email = await getUserEmail()
+    const email = await getUserEmail();
     const newComment = {
       user_email: email,
       payload: comment,
       reply_of: replyOf,
-      theme: theme
+      theme: theme,
     };
     if (typeof commentList !== "undefined") {
       mutate(GET_COMMENT_URL, [...commentList, newComment], false);
@@ -132,16 +140,18 @@ export default function Comments({ theme } : { theme: string}) {
 
   return (
     <>
-      <div className="justify-center p-1 w-full">
-          <h1 className="text-2xl font-semibold font-theGreat ">Comentários</h1>
-          { email && <form onSubmit={onSubmit} className="mt-2 flex gap-1">
+      <div className="w-full justify-center p-1">
+        <h1 className="font-theGreat text-2xl font-semibold ">Comentários</h1>
+        {email && (
+          <form onSubmit={onSubmit} className="mt-2 flex gap-1">
             <div className="w-full">
               {replyOf && (
-                <div className="flex gap-4 my-2 items-center justify-start">
+                <div className="my-2 flex items-center justify-start gap-4">
                   <div className="flex items-center justify-start gap-2">
-                    <Reply className="w-4 text-gray-600 rotate-180" />
-                    <p className="font-extralight italic text-gray-600 text-sm">
-                      {commentList?.find((comment) => comment.id === replyOf)?.payload ?? ""}
+                    <Reply className="w-4 rotate-180 text-gray-600" />
+                    <p className="text-sm font-extralight italic text-gray-600">
+                      {commentList?.find((comment) => comment.id === replyOf)
+                        ?.payload ?? ""}
                     </p>
                   </div>
                   <button onClick={() => setReplyOf(null)} title="Cancel">
@@ -154,97 +164,117 @@ export default function Comments({ theme } : { theme: string}) {
                 value={comment}
                 type="text"
                 placeholder="Adicionar comentário"
-                className="p-2 border-b focus:border-b-gray-700 w-full outline-none rounded-sm"
+                className="w-full rounded-sm border-b p-2 outline-none focus:border-b-gray-700"
               />
             </div>
-            <button type="submit" className="px-4 py-2 bg-colabBlue rounded-lg text-white">
+            <button
+              type="submit"
+              className="rounded-lg bg-colabBlue px-4 py-2 text-white"
+            >
               Postar
             </button>
-          </form> 
-          }
-          <div className="flex flex-col gap-2 pt-2">
-            {(commentList ?? [])
-              .sort((a, b) => {
-                const aDate = new Date(a.created_at);
-                const bDate = new Date(b.created_at);
-                return +aDate - +bDate;
-              })
-              .map((comment) => (
-                <div key={comment.id} className="border rounded-md p-2 bg-white">
-                  {comment.reply_of && (
-                    <div className="flex items-center justify-start gap-2">
-                      <Reply className="w-3 text-gray-600 rotate-180" />
-                      <p className="font-extralight italic text-gray-600 text-xs">
-                        {commentList?.find((c) => c.id === comment.reply_of)?.payload ?? ""}
-                      </p>
-                    </div>
+          </form>
+        )}
+        <div className="flex flex-col gap-2 pt-2">
+          {(commentList ?? [])
+            .sort((a, b) => {
+              const aDate = new Date(a.created_at);
+              const bDate = new Date(b.created_at);
+              return +aDate - +bDate;
+            })
+            .map((comment) => (
+              <div key={comment.id} className="rounded-md border bg-white p-2">
+                {comment.reply_of && (
+                  <div className="flex items-center justify-start gap-2">
+                    <Reply className="w-3 rotate-180 text-gray-600" />
+                    <p className="text-xs font-extralight italic text-gray-600">
+                      {commentList?.find((c) => c.id === comment.reply_of)
+                        ?.payload ?? ""}
+                    </p>
+                  </div>
+                )}
+                <p className="font-semibold">
+                  {comment.updated_at !== comment.created_at && (
+                    <span className="ml-1 text-sm font-extralight italic">
+                      alterado
+                    </span>
                   )}
-                  <p className="font-semibold">
-                    {comment.updated_at !== comment.created_at && (
-                      <span className="ml-1 text-sm italic font-extralight">alterado</span>
-                    )}
-                  </p>
-                  <div className="flex items-center gap-2 justify-between">
-                    {comment.id === editComment.id ? (
-                      <input
-                        type="text"
-                        value={editComment.payload}
-                        onChange={onChangeEditComment}
-                        className="pb-1 border-b w-full"
-                      />
-                    ) : (
-                      <p className="font-light">{comment.payload}</p>
-                    )}
-                    <div className="flex gap-2">
-                      {editComment.id === comment.id ? (
-                        <>
-                          <button
-                            type="button"
-                            onClick={confirmEdit}
-                            disabled={editComment.payload === comment.payload}
-                            title="Confirm"
-                          >
-                            <CircleCheck
-                              className={`${
-                                editComment.payload === comment.payload ? `text-gray-300` : `text-green-500`
-                              } w-6`}
-                            />
-                          </button>
-                          <button type="button" onClick={() => setEditComment({ id: "", payload: "" })} title="Cancel">
-                            <CircleX className="w-6 text-gray-600" />
-                          </button>
-                        </>
-                      ) : (
-                        <>{
-                            comment?.user_email === email &&
-                            <>
-                              <button
-                                onClick={() =>
-                                  setEditComment({
-                                    id: comment.id,
-                                    payload: comment.payload,
-                                  })
-                                }
-                                title="Edit comment"
-                              >
-                                <Pencil className="w-4" />
-                              </button>
-                              <button onClick={() => confirmDelete(comment.id)} title="Delete comment">
-                                <Trash className="w-4" />
-                              </button>
-                              <button onClick={() => setReplyOf(comment.id)} title="Reply to comment">
-                                <Reply className="w-4 rotate-180" />
-                              </button>
-                            </>
+                </p>
+                <div className="flex items-center justify-between gap-2">
+                  {comment.id === editComment.id ? (
+                    <input
+                      type="text"
+                      value={editComment.payload}
+                      onChange={onChangeEditComment}
+                      className="w-full border-b pb-1"
+                    />
+                  ) : (
+                    <p className="font-light">{comment.payload}</p>
+                  )}
+                  <div className="flex gap-2">
+                    {editComment.id === comment.id ? (
+                      <>
+                        <button
+                          type="button"
+                          onClick={confirmEdit}
+                          disabled={editComment.payload === comment.payload}
+                          title="Confirm"
+                        >
+                          <CircleCheck
+                            className={`${
+                              editComment.payload === comment.payload
+                                ? `text-gray-300`
+                                : `text-green-500`
+                            } w-6`}
+                          />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setEditComment({ id: "", payload: "" })
                           }
-                        </>
-                      )}
-                    </div>
+                          title="Cancel"
+                        >
+                          <CircleX className="w-6 text-gray-600" />
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        {comment?.user_email === email && (
+                          <>
+                            <button
+                              onClick={() =>
+                                setEditComment({
+                                  id: comment.id,
+                                  payload: comment.payload,
+                                })
+                              }
+                              title="Edit comment"
+                            >
+                              <Pencil className="w-4" />
+                            </button>
+                            <button
+                              onClick={() => confirmDelete(comment.id)}
+                              title="Delete comment"
+                            >
+                              <Trash className="w-4" />
+                            </button>
+                            <button
+                              onClick={() => setReplyOf(comment.id)}
+                              title="Reply to comment"
+                            >
+                              <Reply className="w-4 rotate-180" />
+                            </button>
+                          </>
+                        )}
+                      </>
+                    )}
                   </div>
                 </div>
-              ))}
-          </div>
+              </div>
+            ))}
+        </div>
       </div>
     </>
   );
-};
+}

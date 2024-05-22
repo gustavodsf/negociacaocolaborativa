@@ -1,13 +1,13 @@
 "use client";
 
+import Comments from "@/components/comment/Comments";
 import SendGAEvent from "@/components/SendGAEvent";
+import SignOut from "@/components/SignOut";
 import { User } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import checkUserLoggedIn from "./actions";
 import { contentUrl, ContentURLType } from "./constants";
-import SignOut from "@/components/SignOut";
-import Comments from "@/components/comment/Comments";
 
 export default function Page({ params }: { params: { slug: ContentURLType } }) {
   const [user, setUser] = useState<User | null>();
@@ -26,7 +26,7 @@ export default function Page({ params }: { params: { slug: ContentURLType } }) {
         <section className="min-h-[100vh] w-[50vw] p-1">
           <iframe src={url} className="min-h-[100vh] w-[50vw]"></iframe>
         </section>
-        <section className="flex flex-col p-[2rem] w-[45vw]">
+        <section className="flex w-[45vw] flex-col p-[2rem]">
           <span className="font-theGreat text-2xl text-colabDarkGreen">
             {theme}
           </span>
@@ -62,8 +62,8 @@ export default function Page({ params }: { params: { slug: ContentURLType } }) {
               </SendGAEvent>
             </a>
           </span>
-          <section className="w-full max-h-[50rem] p-1 flex-wrap overflow-scroll  border-t-2 border-colabBlue border-dashed">
-            <Comments theme={slug}/>
+          <section className="max-h-[50rem] w-full flex-wrap overflow-scroll border-t-2  border-dashed border-colabBlue p-1">
+            <Comments theme={slug} />
           </section>
         </section>
       </main>

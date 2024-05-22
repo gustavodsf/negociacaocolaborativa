@@ -87,7 +87,7 @@ export default async function Login() {
                   label="User is going from login to group page "
                   value="Usuário clicou para realizar a transição entre a página de login para a de grupos"
                 >
-                  <span className="w-full h-full flex flex-row items-center">
+                  <span className="flex h-full w-full flex-row items-center">
                     <span className="material-symbols-outlined mr-1">
                       subdirectory_arrow_right
                     </span>
@@ -109,7 +109,7 @@ export default async function Login() {
                   label="User is going from login to group page "
                   value="Usuário clicou para realizar a transição entre a página de login para a de grupos"
                 >
-                  <span className="w-full h-full flex flex-row items-center">
+                  <span className="flex h-full w-full flex-row items-center">
                     <span className="material-symbols-outlined mr-1">
                       subdirectory_arrow_left
                     </span>

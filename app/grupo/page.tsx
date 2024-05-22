@@ -54,7 +54,7 @@ export default async function Grupo() {
                           label="User wants to get knowledge before voting"
                           value="Usuário clicou para obter conhecimento antes de votar"
                         >
-                          <span className="w-full h-full flex flex-row items-center">
+                          <span className="flex h-full w-full flex-row items-center">
                             <span className="material-symbols-outlined">
                               content_copy
                             </span>
@@ -74,7 +74,7 @@ export default async function Grupo() {
                           label="User wants to vote and not pass on the content screen"
                           value="Usuário clicou para votar sem passar na tela de perspectiva"
                         >
-                          <span className="w-full h-full flex flex-row items-center">
+                          <span className="flex h-full w-full flex-row items-center">
                             <span className="material-symbols-outlined">
                               how_to_vote
                             </span>
@@ -115,8 +115,8 @@ export default async function Grupo() {
                 </div>
               </div>
             </div>
-            <div className="h-full w-[30%] bg-star flex flex-col items-center justify-end">
-            <Link
+            <div className="flex h-full w-[30%] flex-col items-center justify-end bg-star">
+              <Link
                 href="/theme"
                 className="flex w-[8rem] items-center justify-center 
               rounded border-2 border-colabBlue bg-colabBlue 
@@ -130,7 +130,7 @@ export default async function Grupo() {
                   label="User is going from group to login page "
                   value="Usuário clicou para realizar a transição entre a página de grupos para a de login"
                 >
-                  <span className="w-full h-full flex flex-row items-center">
+                  <span className="flex h-full w-full flex-row items-center">
                     <span className="material-symbols-outlined mr-1">
                       subdirectory_arrow_left
                     </span>

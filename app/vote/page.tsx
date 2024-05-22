@@ -24,22 +24,27 @@ export default async function Perspectiva() {
                   value="Usuário clicou para votar no tema relacionado com transição gênero em crianças."
                 >
                   <span className="flex w-full flex-col items-center justify-center">
-                  <Image src="/vote.png" width={120} height={120} alt="lamp" />
-                  <p className="font-theGreat text-xl text-center font-medium text-colabGreen hover:underline">
-                    Transição de Gênero em Crianças
-                  </p>
+                    <Image
+                      src="/vote.png"
+                      width={120}
+                      height={120}
+                      alt="lamp"
+                    />
+                    <p className="text-center font-theGreat text-xl font-medium text-colabGreen hover:underline">
+                      Transição de Gênero em Crianças
+                    </p>
                   </span>
                 </SendGAEvent>
               </Link>
             </section>
           </div>
-          <div className="h-full w-[20%] rounded-s-lg bg-star flex flex-col items-center justify-between">
+          <div className="flex h-full w-[20%] flex-col items-center justify-between rounded-s-lg bg-star">
             <Image src="/lamp.png" width={150} height={150} alt="lamp" />
             <Link
               href="/perspectiva"
-              className="flex w-[10rem] items-center justify-center 
-              rounded border-2 border-white bg-white 
-              bg-transparent px-4 py-2 font-semibold text-colaBlue
+              className="text-colaBlue flex w-[10rem] items-center 
+              justify-center rounded border-2 border-white 
+              bg-transparent bg-white px-4 py-2 font-semibold
               shadow-2xl hover:border-transparent
               hover:bg-colabGreen hover:text-colabBlue"
             >
@@ -49,7 +54,7 @@ export default async function Perspectiva() {
                 label="User is going from vote  to perspectiva"
                 value="Usuário quer ir da página da página de vote para perspectiva"
               >
-                <span className="w-full h-full flex flex-row items-center">
+                <span className="flex h-full w-full flex-row items-center">
                   <span className="material-symbols-outlined mr-1">
                     subdirectory_arrow_left
                   </span>
@@ -58,7 +63,6 @@ export default async function Perspectiva() {
               </SendGAEvent>
             </Link>
           </div>
-          
         </div>
       </div>
     </>

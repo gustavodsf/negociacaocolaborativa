@@ -1,7 +1,7 @@
 import SendGAEvent from "@/components/SendGAEvent";
+import SignOut from "@/components/SignOut";
 import Link from "next/link";
 import { signup } from "../../actions/login";
-import SignOut from "@/components/SignOut";
 
 export default function SignUpPage() {
   return (

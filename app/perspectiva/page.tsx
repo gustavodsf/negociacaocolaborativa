@@ -7,9 +7,9 @@ import { toast } from "react-hot-toast";
 import { diagram } from "./constants";
 import "beautiful-react-diagrams/styles.css";
 import "./style.css";
-import { DiagramSchema } from "beautiful-react-diagrams/@types/DiagramSchema";
-import SignOut from "@/components/SignOut";
 import SendGAEvent from "@/components/SendGAEvent";
+import SignOut from "@/components/SignOut";
+import { DiagramSchema } from "beautiful-react-diagrams/@types/DiagramSchema";
 
 const UncontrolledDiagram = () => {
   const initialSchema = createSchema(
@@ -35,7 +35,7 @@ export default async function Perspectiva() {
           </header>
           <main>
             <UncontrolledDiagram />
-            <div className="w-full flex flex-row  justify-between">
+            <div className="flex w-full flex-row  justify-between">
               <Link
                 href="/vote"
                 className="flex w-[10rem] items-center justify-center 
@@ -50,7 +50,7 @@ export default async function Perspectiva() {
                   label="User is going from perspectiva  to vote"
                   value="Usuário clicou para ir votar"
                 >
-                  <span className="w-full h-full flex flex-row items-center">
+                  <span className="flex h-full w-full flex-row items-center">
                     <span className="material-symbols-outlined mr-1">
                       subdirectory_arrow_right
                     </span>
@@ -72,7 +72,7 @@ export default async function Perspectiva() {
                   label="User is going from perspectiva  to group"
                   value="Usuário quer ir da página da página de perspectiva para grupo"
                 >
-                  <span className="w-full h-full flex flex-row items-center">
+                  <span className="flex h-full w-full flex-row items-center">
                     <span className="material-symbols-outlined mr-1">
                       subdirectory_arrow_left
                     </span>
