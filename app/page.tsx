@@ -5,23 +5,21 @@ import Link from "next/link";
 
 export default async function Index() {
   return (
-    <div className="flex h-screen w-screen flex-col items-center bg-colabBlue">
-      <div className="flex h-full flex-col items-center">
-        <span className="text-center font-dancing text-8xl text-colabGreen">
-          Dilemas de Sócrates
-        </span>
-        <span className="mt-6">
-          <Image src="/lamp.png" width={150} height={150} alt="lamp" />
-        </span>
-      </div>
-      <div className="flex h-[90%] flex-col items-center justify-end bg-star">
-        <Image
-          src="/mulher.png"
-          width={200}
-          height={200}
-          className="mb-2"
-          alt="women"
-        />
+    <div className="flex h-screen w-screen flex-col items-center bg-colabBlue justify-center">
+      <span className="text-center font-dancing text-8xl text-colabGreen">
+        Dilemas de Sócrates
+      </span>
+      <div className="flex flex-row w-full items-center justify-center">
+        <Image src="/lamp.png" width={200} height={200} alt="lamp" />
+        <div className="flex h-full flex-col items-center justify-end bg-star">
+          <Image
+            src="/mulher.png"
+            width={200}
+            height={200}
+            className="mb-2"
+            alt="women"
+          />
+        </div>
       </div>
       <div className="flex h-[10%] w-full items-center justify-center font-theGreat">
         <Link

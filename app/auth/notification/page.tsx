@@ -1,12 +1,12 @@
-import { ArrowLeftFromLine, ServerCrash } from "lucide-react";
+import { ArrowLeftFromLine, Mail } from "lucide-react";
 import Link from "next/link";
 
-export default function ErrorPage() {
+export default function NotificationPage() {
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center bg-colabPurple text-white gap-3">
-      <ServerCrash size={48} />
+      <Mail size={48} />
       <span className="font-theGreat text-5xl text-center">
-        Eita! Deu problema ao criar seu usuário
+        Verifique seu email para ativar sua conta!
       </span>
       <Link
         href="/signin"
@@ -16,5 +16,5 @@ export default function ErrorPage() {
         Voltar
       </Link>
     </div>
-  );
+  )
 }

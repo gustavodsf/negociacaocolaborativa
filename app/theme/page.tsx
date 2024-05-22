@@ -7,19 +7,17 @@ export default async function Login() {
   return (
     <>
       <SignOut />
-      <div className="flex h-[100vh] w-[100vw] items-center justify-center bg-colabGray">
-        <div className="m-auto flex h-[70%] w-[60%] flex-col">
+      <div className="h-screen w-screen flex flex-col items-center justify-center bg-colabGray gap-2">
           <header className="flex flex-row items-center text-center">
-            <Image src="/lamp-sun.png" width={150} height={150} alt="lamp" />
-            <span className="w-full font-theGreat text-6xl text-colabDarkGreen">
+            <Image src="/lamp-sun.png" width={80} height={80} alt="lamp" />
+            <span className="w-full font-theGreat text-5xl text-colabDarkGreen">
               Pesquisa de Tese
             </span>
           </header>
-          <main className="flex w-full flex-row items-center justify-around p-2">
-            <div className="w-[50%]">
-              <section>
+          <section className="w-full flex flex-row justify-start items-start">
+            <div>
                 <Link
-                  className="text-4xl text-colabPurple"
+                  className="text-3xl text-colabPurple"
                   href="https://docs.google.com/forms/d/e/1FAIpQLSebcdg_KJ_xTPnPnE5HUuLV-mPdoWmrBGosmik7nvcaFqkdAw/viewform"
                 >
                   <SendGAEvent
@@ -32,8 +30,9 @@ export default async function Login() {
                   </SendGAEvent>
                 </Link>
                 <div className="h-3 w-[90%] rounded-r-lg bg-colabLightGreen"></div>
+                </div>
               </section>
-              <section className="mt-5">
+              <section className="mt-5 p-1">
                 <div className="text-justify text-xl text-colabDarkGreen">
                   Essa plataforma é parte integrante de uma pesquisa de
                   doutorado PPGI/UFRJ sobre comportamentos interacionais em
@@ -47,35 +46,31 @@ export default async function Login() {
                   Termo de Compromisso de Participação.
                 </Link>
               </section>
-            </div>
-            <div className="relative flex w-[40%] flex-row items-center justify-center bg-star-2">
-              <Image src="/phone.png" width={200} height={200} alt="phone" />
-              <Link
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform "
-                href="/signin"
-              >
-                <SendGAEvent
-                  action="clicked_to_login"
-                  category="click"
-                  label="User clicked to login in the platform"
-                  value="O usuário cliclou para entrar na plataforma"
+              <div className="relative flex flex-row items-center justify-center bg-star-2">
+                <Image src="/phone.png" width={80} height={80} alt="phone" />
+                <Link
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform  w-[8rem]"
+                  href="/signin"
                 >
-                  <Image
-                    src="/bt_login.png"
-                    width={200}
-                    height={50}
-                    alt="phone"
-                  />
-                </SendGAEvent>
-              </Link>
+                  <SendGAEvent
+                    action="clicked_to_login"
+                    category="click"
+                    label="User clicked to login in the platform"
+                    value="O usuário cliclou para entrar na plataforma"
+                  >
+                    <Image
+                      src="/bt_login.png"
+                      width={200}
+                      height={50}
+                      alt="phone"
+                    />
+                  </SendGAEvent>
+                </Link>
             </div>
-          </main>
-          <footer className="flex w-full flex-row items-center justify-around p-2">
-            <div className="w-[50%]"></div>
             <div className="flex  w-[40%] flex-row items-center justify-center gap-1">
               <Link
                 href="/grupo"
-                className="flex w-[8rem] items-center justify-center 
+                className="flex w-[6rem] items-center justify-center 
               rounded border-2 border-colabBlue bg-colabBlue 
               bg-transparent px-4 py-2 font-semibold text-colabBlue
               shadow-2xl hover:border-transparent
@@ -91,13 +86,13 @@ export default async function Login() {
                     <span className="material-symbols-outlined mr-1">
                       subdirectory_arrow_right
                     </span>
-                    <span className="text-xl">Enter</span>
+                    <span className="text-lg">Enter</span>
                   </span>
                 </SendGAEvent>
               </Link>
               <Link
                 href="/"
-                className="flex w-[8rem] items-center justify-center 
+                className="flex w-[6rem] items-center justify-center 
               rounded border-2 border-colabBlue bg-colabBlue 
               bg-transparent px-4 py-2 font-semibold text-colabBlue
               shadow-2xl hover:border-transparent
@@ -113,13 +108,11 @@ export default async function Login() {
                     <span className="material-symbols-outlined mr-1">
                       subdirectory_arrow_left
                     </span>
-                    <span className="text-xl">Voltar</span>
+                    <span className="text-lg">Voltar</span>
                   </span>
                 </SendGAEvent>
               </Link>
             </div>
-          </footer>
-        </div>
       </div>
     </>
   );

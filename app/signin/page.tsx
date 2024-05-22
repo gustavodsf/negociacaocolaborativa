@@ -7,13 +7,12 @@ export default function SignUpPage() {
   return (
     <>
       <SignOut />
-      <main className="flex min-h-[100vh] min-w-[100vw] flex-row items-center justify-center bg-colabBlue">
-        <div className="flex h-[50vh] w-[50vw] flex-col  items-center justify-around">
+      <main className="flex min-h-screen w-screen flex-col items-center justify-center bg-colabBlue">
           <section className="text-center font-theGreat text-5xl font-bold text-white">
             Entrar
           </section>
-          <main className="flex items-center justify-center text-sm text-gray-500">
-            <form className="group flex w-[30rem] flex-col rounded-md bg-white p-5 shadow-lg md:p-10">
+          <section className="flex w-full items-center justify-center text-sm text-gray-500">
+            <form className="group  sm:w-[95%] xl:w-[50%] flex flex-col rounded-md bg-white p-5 shadow-lg md:p-10">
               <label htmlFor="email" className="mb-5">
                 <span>Email</span>
                 <input
@@ -81,8 +80,7 @@ export default function SignUpPage() {
                 </Link>
               </span>
             </form>
-          </main>
-        </div>
+          </section>
       </main>
     </>
   );
