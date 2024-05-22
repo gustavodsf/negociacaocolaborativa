@@ -7,7 +7,7 @@ export default async function Login() {
   return (
     <>
       <SignOut />
-      <div className="flex h-screen w-screen flex-col items-center justify-center gap-2 bg-colabGray">
+      <div className="flex h-screen w-screen flex-col items-center justify-center gap-2 bg-colabGray p-2">
         <header className="flex flex-row items-center text-center">
           <Image src="/lamp-sun.png" width={80} height={80} alt="lamp" />
           <span className="w-full font-theGreat text-5xl text-colabDarkGreen">
