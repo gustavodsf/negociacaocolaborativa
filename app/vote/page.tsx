@@ -7,11 +7,12 @@ export default async function Perspectiva() {
   return (
     <>
       <SignOut />
-      <div className="flex h-[100vh] w-[100vw] items-center justify-center bg-colabBlue">
-        <div className="m-auto flex h-[60%] w-[50%] flex-row">
-          <div className="h-full w-[20%] rounded-s-lg bg-star-2"></div>
-          <div className="h-full w-[60%]">
-            <Image src="/group_img.png" width={400} height={400} alt="lamp" />
+      <div className="flex flex-col min-h-screen w-screen items-center justify-center bg-colabBlue">
+        <div className="h-[8rem] w-[90%] rounded-s-lg bg-star-2 flex flex-row items-center justify-start">
+          <Image src="/lamp.png" width={80} height={80} alt="lamp" />
+        </div>
+        <div className="flex flex-col items-center">
+        <Image src="/group_img.png" width={250} height={250} alt="lamp" />
             <section className="align-center flex w-full flex-col justify-center">
               <Link
                 href="https://docs.google.com/forms/d/e/1FAIpQLSct7LJFujHT8vbDPmcREudtciY7oi2O-jvpgapE0kGp_V4LJQ/viewform"
@@ -37,9 +38,8 @@ export default async function Perspectiva() {
                 </SendGAEvent>
               </Link>
             </section>
-          </div>
-          <div className="flex h-full w-[20%] flex-col items-center justify-between rounded-s-lg bg-star">
-            <Image src="/lamp.png" width={150} height={150} alt="lamp" />
+        </div>
+        <div className="h-[8rem] w-[90%] bg-star flex flex-row items-center justify-end">
             <Link
               href="/perspectiva"
               className="text-colaBlue flex w-[10rem] items-center 
@@ -62,7 +62,6 @@ export default async function Perspectiva() {
                 </span>
               </SendGAEvent>
             </Link>
-          </div>
         </div>
       </div>
     </>
