@@ -46,7 +46,7 @@ export default function RootLayout({
     >
       <GoogleAnalytics />
       <body className="bg-background text-foreground">
-        <main className="flex min-h-screen flex-col items-center relative">
+        <main className="relative flex min-h-screen flex-col items-center">
           <NextUIProvider>
             <Providers>
               {children}
