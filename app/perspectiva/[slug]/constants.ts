@@ -1,6 +1,6 @@
 export const contentUrl = {
   "01-1I": {
-    url: "https://www.youtube.com/watch?v=DfgJPg2koGs",
+    url: "https://www.youtube.com/embed/DfgJPg2koGs",
     theme: "Perspectiva 01 - Apoio à autenticidade da identidade da criança",
   },
   "05-1R": {
